@@ -103,18 +103,18 @@ def day_1():
                 if line[l].isnumeric():
                     first = line[l]
                 else:
-                    for valkey in numdict:
-                        if line[l:len(valkey)+l] == valkey:
-                            first = numdict[valkey]
+                    for index in range(3,6):
+                        if line[l:index+l] in numdict:
+                            first = numdict[line[l:index+l]]
                     if first is None:
                         l+=1
             if second is None:
                 if line[r].isnumeric():
                     second = line[r]
                 else:
-                    for valkey in numdict:
-                        if line[r:len(valkey)+r] == valkey:
-                            second = numdict[valkey]
+                    for index in range(3,6):
+                        if line[r:index+r] in numdict:
+                            second = numdict[line[r:index+r]]
                     if second is None:
                         r -= 1
             if first is not None and second is not None:
